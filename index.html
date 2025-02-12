@@ -12,10 +12,34 @@
         <!-- دوربین -->
         <a-marker type="pattern" url="pattern.patt">
             <!-- نمایش ویدیو روی عکس شناسایی شده -->
-           <a-video src="https://drive.usercontent.google.com/download?id=1a3DgOz5jqap1M2OqZNLPV4fNbwOETnu0&export=preview&confirm=t&uuid=57161084-4095-4a29-8426-a500438673cd" width="1" height="0.5"></a-video>
-
+            <a-video id="arVideo" width="1" height="0.5" position="0 0 0" rotation="-90 0 0">
+            </a-video>
         </a-marker>
         <a-entity camera></a-entity>
     </a-scene>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // لینک مستقیم تبدیل شده از Google Drive
+            let videoSrc = "https://drive.google.com/uc?export=preview&id=1a3DgOz5jqap1M2OqZNLPV4fNbwOETnu0";
+
+            // دریافت عنصر ویدیو در AR.js
+            let arVideo = document.getElementById("arVideo");
+
+            // تنظیم src و فعال‌سازی پخش خودکار
+            arVideo.setAttribute("src", videoSrc);
+            arVideo.setAttribute("autoplay", "true");
+            arVideo.setAttribute("loop", "true");
+            arVideo.setAttribute("muted", "false");
+            arVideo.setAttribute("playsinline", "true");
+
+            // پخش ویدیو وقتی صفحه لود شد
+            arVideo.addEventListener("loadeddata", function () {
+                arVideo.play().catch(error => {
+                    console.log("Autoplay failed, user interaction needed.");
+                });
+            });
+        });
+    </script>
 </body>
 </html>
