@@ -4,42 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>واقعیت افزوده روی قاب عکس</title>
+      <meta http-equiv="refresh" content="3; url=https://ar.blippar.com/1739360232288">
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/AR.js@1.7.2/aframe/build/aframe-ar.min.js"></script>
 </head>
 <body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs>
-        <!-- دوربین -->
-        <a-marker type="pattern" url="pattern.patt">
-            <!-- نمایش ویدیو روی عکس شناسایی شده -->
-            <a-video id="arVideo" width="1" height="0.5" position="0 0 0" rotation="-90 0 0">
-            </a-video>
-        </a-marker>
-        <a-entity camera></a-entity>
-    </a-scene>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // لینک مستقیم از GitHub Releases
-            let videoSrc = "https://github.com/Hasanwlip/valen/releases/download/valen/IMG_3041.MP4";
+LOVE YOU Nahal 2025
 
-            // دریافت عنصر ویدیو در AR.js
-            let arVideo = document.getElementById("arVideo");
-
-            // تنظیم src و فعال‌سازی پخش خودکار
-            arVideo.setAttribute("src", videoSrc);
-            arVideo.setAttribute("autoplay", "true");
-            arVideo.setAttribute("loop", "true");
-            arVideo.setAttribute("muted", "false");
-            arVideo.setAttribute("playsinline", "true");
-
-            // پخش ویدیو وقتی صفحه لود شد
-            arVideo.addEventListener("loadeddata", function () {
-                arVideo.play().catch(error => {
-                    console.log("Autoplay failed, user interaction needed.");
-                });
-            });
-        });
-    </script>
 </body>
 </html>
